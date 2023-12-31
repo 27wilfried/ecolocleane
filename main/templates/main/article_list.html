@@ -1,0 +1,35 @@
+{% extends 'bin/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<section id="articles" class="page">
+    <div class="container">
+        <h2 class="offset-4">Liste des Articles</h2> <br>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for article in articles %}
+            <div class="col">
+                <div class="card" style="border-radius: 0">
+                    <a href="{% url 'article-detail' article.id %}" style="text-decoration: none;">
+                        <img src="{{ article.image.url }}" class="card-img-top" alt="{{ article.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: rgb(0, 0, 0);">{{ article.title }}</h5>
+                            <!-- Utilisation de truncatewords pour afficher seulement une partie de la description -->
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">{{ article.description | truncatewords:30 }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<br><br>
+
+
+
+{% endblock %}

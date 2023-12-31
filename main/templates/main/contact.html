@@ -1,0 +1,173 @@
+{% extends 'bin/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<style>
+    @keyframes click-wave {
+        0% {
+            height: 40px;
+            width: 40px;
+            opacity: 0.35;
+            position: relative;
+        }
+
+        100% {
+            height: 200px;
+            width: 200px;
+            margin-left: -80px;
+            margin-top: -80px;
+            opacity: 0;
+        }
+    }
+
+    .option-input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        position: relative;
+        top: 13.33333px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        transition: all 0.15s ease-out 0s;
+        background: #cbd1d8;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 0.5rem;
+        outline: none;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .option-input:hover {
+        background: #9faab7;
+    }
+
+    .option-input:checked {
+        background: #40e0d0;
+    }
+
+    .option-input:checked::before {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        content: '✔';
+        display: inline-block;
+        font-size: 26.66667px;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .option-input:checked::after {
+        -webkit-animation: click-wave 0.65s;
+        -moz-animation: click-wave 0.65s;
+        animation: click-wave 0.65s;
+        background: #40e0d0;
+        content: '';
+        display: block;
+        position: relative;
+        z-index: 100;
+    }
+
+    .option-input.radio {
+        border-radius: 50%;
+    }
+
+    .option-input.radio::after {
+        border-radius: 50%;
+    }
+</style>
+
+
+<section class="page" style="margin-bottom: 75px;">
+    <div class="container">
+        <div class="content ">
+            <div class="heading text-center">
+                <h2 class="mt-0 mb-4">Contact</h2>
+                {% if messages %}
+                <div class="messages alert alert-success">
+                    {% for message in messages %}
+                    <strong>Succès!</strong> {{ message }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <center>
+                    <div class="border" style=" width: 150px;"></div>
+                </center>
+
+                <div class="row offset-4">
+                    <div class="col-md-12">
+                        <form action="{% url 'contact' %}" method="POST">
+                            <div class="form">
+                                <input type="hidden" name="_token" value="YLSaT2oKWfA2p6n2mffyfKtdTrd2VC013Dz2wlaM">
+                                <div class="text-center mt-5">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-5">
+                                            <label>E-mail</label>
+                                            <input name="email" type="email" value="" class="form-control"
+                                                style="border-radius: 0" placeholder="E-mail" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Message</label>
+                                        <textarea name="Message" class="form-control" style="border-radius: 0" id=""
+                                            cols="30" rows="5" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 text-start">
+                                    <style>
+                                        /* Style personnalisé pour le bouton */
+                                        .custom-button {
+                                            color: white;
+                                            /* Texte en blanc */
+                                            border-radius: 0;
+                                            /* Bordure rectangulaire */
+                                            background-color: #f0ad4e;
+                                            /* Couleur de fond du bouton */
+                                            width: 200px;
+                                        }
+
+                                        /* Style au survol du bouton */
+                                        .custom-button:hover {
+                                            background-color: #93b932;
+                                            /* Couleur de fond au survol */
+                                            border-radius: 0;
+                                            width: 200px;
+
+                                        }
+                                    </style>
+                                    <br>
+                                    <!-- Utilisation du bouton personnalisé -->
+                                    <button type="submit" class="btn custom-button">Enregistrer</button>
+
+                                </div>
+
+                            </div>
+                    </div>{% csrf_token %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Assurez-vous que jQuery est inclus correctement -->
+
+
+
+
+{% endblock %}

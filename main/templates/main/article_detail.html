@@ -1,0 +1,17 @@
+{% extends 'bin/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="{{ article.image.url }}" class="img-fluid" alt="{{ article.title }}">
+        </div>
+        <div class="col">
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.description }}</p>
+            <!-- Autres détails de l'article -->
+        </div>
+    </div>
+</div>
+<br><br>
+{% endblock %}

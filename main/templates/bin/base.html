@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'node_modules/cocoen/docs/css/cocoen.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/static/asset/css/animate.min.css.css'%}">
+    <link rel="stylesheet" href="{% static 'main/static/asset/css/font-style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .colored-background {
+            position: relative;
+            display: inline-block;
+        }
+
+        .colored-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #93b932;
+            /* Couleur de fond */
+            transform: skewY(-2deg);
+            /* Inclinaison verticale */
+            transform-origin: bottom left;
+            /* Point d'origine de la transformation */
+            z-index: -1;
+            /* Placez le fond derrière le texte */
+        }
+
+        .background-incline {
+            background: #93b932;
+            transform: skewY(-2deg);
+            background-size: 100% 200%;
+            /* Largeur à 100% et hauteur à 200% pour incliner verticalement */
+            background-clip: text;
+            /* Limiter le fond au texte */
+            color: #000;
+            /* Espacement du texte par rapport au fond */
+        }
+
+        .background-inclin {
+            position: relative;
+            background-color: #87CEEB;
+            padding: -1px 5px;
+            display: inline-block;
+        }
+
+        .background-inclin::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5%;
+            height: 5%;
+            background: linear-gradient(10deg, transparent 50%, #87CEEB 50%);
+            /* Fond incliné */
+            z-index: -1;
+        }
+
+        .yellow-underline {
+            position: relative;
+        }
+
+        .yellow-underline::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            /* Hauteur du soulignement */
+            background-color: yellow;
+            /* Couleur du soulignement */
+        }
+
+        .user-review {
+            text-align: center;
+        }
+
+        .stars {
+            color: gold;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    {% include "bin/nav.html" %}
+    {% block content %}
+    {% endblock %}
+
+
+
+
+
+
+    <footer style="background-color: #B5CF71; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- Première colonne -->
+                    <img src="{% static 'asset/img/logo.png'%}" style="padding: 50px;" alt="Logo du site">
+                </div>
+                <div class="col-md-4">
+                    <!-- Deuxième colonne -->
+                    <div class="offset-3">
+                        <img src="{% static 'asset/img/logo-linkedin.png.png'%}" class="justify-content-center offset-3"
+                            style="padding: 20px;margin-left: 70px;" alt="Logo LinkedIn">
+                        <p style="color: rgb(255, 255, 255); margin-left: 40px;">07 81 91 63 13</p>
+                        <p style="color: rgb(255, 255, 255);">contact@ecolocleanersystem.fr</p>
+                        <p style="color: rgb(255, 255, 255);">© 2023 - Ecolo Cleaner System</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- Troisième colonne -->
+                    <div class="offset-1" style="padding: 50px;">
+                        <p style="color: rgb(255, 255, 255);">Mentions légales</p>
+                        <p style="color: rgb(255, 255, 255);">Conditions générales de vente</p>
+                        <p style="color: rgb(255, 255, 255);">Politique de confidentialité</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="{% static 'node_modules/cocoen/docs/js/cocoen-jquery.min.js'%}"></script>
+    <script src="{% static 'node_modules/cocoen/docs/js/cocoen.min.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.3.3/jquery.appear.min.js"></script>
+    <script>
+
+        document.querySelectorAll('.cocoen').forEach(function (element) {
+            new Cocoen(element);
+        });
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+{% extends 'bin/base.html' %}
+{% load static %}
+{% block content %}
+
+<hr class="my-1" style="border-color: #93b932; height: 100px;">
+
+<div class="container" style="margin-top: -80px;" style="margin-left: -50px;">
+    <div class="row offset-1">
+        <div class="col-md-4 "> <!-- Ajout de la classe mt-n3 -->
+            <h4 style="margin-left: -25px;">ENTREPRISE DE NETTOYAGE</h4>
+            <h4 class="offset-2 colored-background">ECOCERTIFIEE</h4>
+            <p class="text-center" style="letter-spacing: 0px;margin-left: -100px;">
+                VEHICULES, LOCAUX ET MOBILIER
+            </p>
+            <div class="d-flex justify-content-center align-items-center" style="margin-left: -100px;">
+                <img src="{% static 'asset/img/ecocert1.png'%}" alt="Image2" class="mr-2 my-img"
+                    style="margin-right: 20px;">
+                <img src="{% static 'asset/img/Lucie.png'%}" alt="Image1" class="my-img">
+            </div>
+            <div class="text-center my-4" style="margin-left: -100px;">
+                <a class="btn btn-warning" style="border-radius: 0" href="{% url 'devis' %}">Devis en ligne</a>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <img src="{% static 'asset/img/picture1.png'%}" alt="Image" class="img-fluid" style="width: 500px;">
+        </div>
+    </div>
+</div>
+<h1 class="text-center my-4 offset-1" style="margin-left: 50px;">
+    N<span style="border-bottom: 1px solid #93b932;">OS SERVICE</span>S
+</h1>
+<section id="about-section" style="background-color: #93b932;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-5">
+                <img src="{% static 'asset/img/esc.png'%}" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 my-5" style="background-color: rgb(255, 255, 255);">
+                <!-- Contenu de la deuxième colonne -->
+                <h4 class="my-4 text-center">
+                    <span>NETTOYAGE</span> <span class="colored-background background-incline">ECORESPONSABLE</span>
+                </h4>
+                <div class="d-flex justify-content-center align-items-center">
+                    <ul>
+                        <li>Nettoyage écologique des <br>
+                            <p class="text-center">véhicules, bus et autocars</p>
+                        </li>
+                        <li>Nettoyage écologique des <br>
+                            <p class="text-center">bureaux, locaux et vitres</p>
+                        </li>
+                        <li>Nettoyage et rénovation du <br>
+                            <p class="text-center">mobilier de bureau</p>
+                        </li>
+
+                        <div class="text-center my-4" style="margin-left: -100px;">
+                            <a class="btn btn-warning offset-3" style="border-radius: 0"
+                                href="{% url 'article_list' %}">Nos
+                                services</a>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-6" style="background-color: rgb(255, 255, 255);height: 289px;width: 570px;">
+                <!-- Contenu de la deuxième colonne -->
+                <h4 class="my-4 text-center">
+                    <span class="colored-background background-incline">DESINFECTION</span><span> ET TRAITEMENT DES
+                    </span>
+                    <p>SURFACES</p>
+                </h4>
+                <div class="d-flex justify-content-center align-items-center">
+                    <ul>
+                        <li>Désinfection des surfaces
+                        </li>
+                        <li>Traitement anti-dérapant Bio-Gliss’
+                        </li>
+                        <div class="text-center my-4" style="margin-left: -100px;">
+                            <a class="btn btn-warning offset-3" style="border-radius: 0" href="{% url 'devis' %}">Devis
+                                en ligne</a>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-md-6 mb-5">
+                <img src="{% static 'asset/img/ecs2.png'%}" alt="Image" class="img-fluid offset-2"
+                    style="width: 459px;height: 289px; left: 764px;">
+            </div>
+        </div>
+    </div>
+</section>
+<h1 class="text-center my-4 offset-2" style="margin-left: 50px;">
+    CH<span style="border-bottom: 1px solid #93b932;">IFFRES CLE</span>S
+</h1>
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-5">
+                <h2 class="offset-3 my-1">
+                    <span class="colored-background background-inclin" style="text-orientation: -50%;">95 000 000
+                        L</span>
+                </h2>
+                <img src=" {% static 'asset/img/Arrow2.png'%}" alt="arrow" style="margin-left: 200px;">
+                <p style="margin-left: 70px;">Quantité d’eau consommée <strong>chaque jour</strong> <br>en France
+                    pour le nettoyage
+                    de véhicules</p>
+            </div>
+
+
+            <div class="col-md-6 my-5" style="background-color: rgb(255, 255, 255);">
+                <!-- Contenu de la deuxième colonne -->
+
+                <div class="d-flex justify-content-center align-items-center">
+                    <p>Nombre de litres d’eau nécessaires en <br> moyenne pour nettoyer un véhicule léger</p>
+                    <img class="mt-2" src=" {% static 'asset/img/Arrow3.png'%}" alt="arrow"
+                        style="margin-left: -400px;padding: 50px;">
+
+                    <h2 class="offset-3 my-0 mt-5" style="margin-left: -100px"> <br>
+                        <span class="colored-background background-inclin" style="text-orientation: -50%;">200
+                            L</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="offset-3" style="letter-spacing: 2px;">En 2022 chez Ecolo Cleaner grâce à nos <strong>processus de
+            nettoyage sans eau :</strong>
+    </p>
+</section>
+<section>
+    <div class="container">
+        <div class="row offset-3">
+            <div class="col-md-4">
+                <img class="mt-2 offset-1" src="{% static 'asset/img/Rectangle5.png'%}" alt="arrow"> <br>
+                <h1 class="colored-background" style="margin-left: 60px;">2702</h1>
+                <p class="offset-1">L d’eau économisés</p>
+
+            </div>
+            <div class="col-md-4 mt-5">
+                <img class="mt-2" src="{% static 'asset/img/caratere.png'%}" alt="arrow">
+            </div>
+            <div class="col-md-4 my-0">
+                <img class="mt-2" style="margin-left: -200px;" src="{% static 'asset/img/zyro-image1.png'%}"
+                    alt="arrow">
+                <br>
+                <h1 class="colored-background" style="margin-left: -150px;margin-top: -100px;">540 400</h1>
+                <p style="margin-left: -150px">L d’eau économisés</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h1 class="text-center my-4 offset-2" style="margin-left: 50px;">
+    NOS<span style="border-bottom: 1px solid #93b932;"> REALOSATI</span>ONS
+</h1>
+<p style="margin-left: 600px;">Un <strong>avant/après</strong> de nos services ? <br>
+</p>
+<p style="margin-left: 550px;">Jouez avec le <span class="yellow-underline">curseur jaune</span> pour voir les
+    résultats !</p>
+
+<section id="work" class="page">
+    <div class="container">
+        <div class="content text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="portfolio">
+                        <div class="row align-items-center">
+                            {% for image_pair in image_pairs %}
+                            <div class="col-md-6 col-lg-6 col-xs-12 mb-4">
+                                <div class="cocoen">
+                                    <img src="{{ image_pair.image1.url }}" height="350" style="object-fit: cover"
+                                        alt="">
+                                    <img src="{{ image_pair.image2.url }}" height="350" style="object-fit: cover"
+                                        alt="">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5">
+    <div id="userReviews" class="carousel slide" data-ride="carousel">
+        <!-- Vos commentaires existants ici -->
+
+        {% for commentaire in commentaires %}
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="user-review">
+                    <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
+                    <p>{{ commentaire.commentaire }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <br><br>
+        <!-- Ajout du formulaire pour permettre aux utilisateurs d'ajouter un commentaire -->
+        <form id="comment-form" class="offset-3" method="post" action="/ajouter_avis/">
+            {% csrf_token %}
+            <label for="comment">Commentaire :</label><br>
+            <textarea name="commentaire" id="comment" rows="4" cols="50" required></textarea><br><br>
+            <button class="btn btn-warning" style="border-radius: 0" type="submit">Ajouter un commentaire</button>
+        </form>
+
+        <!-- Contrôles du carrousel -->
+        <a class="carousel-control-prev" href="#userReviews" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#userReviews" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suivant</span>
+        </a>
+    </div>
+</section>
+
+
+<div class="text-center my-4" style="margin-left: -100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg">
+                <div class="offset-2">
+                    <a class="btn btn-warning" style="border-radius: 0" href="{% url 'devis' %}">Devis en ligne</a>
+                    <img src="{% static 'asset/img/goute.png'%}" alt="Image" class="img-fluid"
+                        style="width: 50px;height: 50px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<center>
+    <section class="container mt-5">
+        {% for video in videos %}
+        <div>
+            <iframe width="560" height="315" src="{{ video.url }}" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        {% endfor %}
+    </section>
+</center>
+
+
+<section class="container mt-5">
+    <div id="userReviews" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="user-review">
+                    <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
+                    <p>Très satisfait de la prestation. Effet Wahou ! Je recommande vivement au vu du rapport
+                        qualité/prix !</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="user-review">
+                    <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
+                    <p>Le meilleur service de nettoyage que j'ai jamais utilisé. Le résultat est incroyable et le
+                        prix est très compétitif.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="user-review">
+                    <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
+                    <p>Excellent service de nettoyage ! Le personnel est professionnel et attentif aux détails. Je
+                        suis très satisfait du
+                        résultat.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#userReviews" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#userReviews" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suivant</span>
+        </a>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Ajoutez le script pour initialiser le carrousel -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#userReviews').carousel({
+            interval: true // Désactive le défilement automatique
+        });
+        $("#comment-form").on('submit', function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/ajouter_avis/',
+                data: {
+                    commentaire: $('#comment').val(),
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                },
+                success: function (response) {
+                    //    $('#userReviews').html('');
+                    location.reload()
+                    // for (let i = 0; i < response.commentaires.length; i++) {
+                    // let comment = response.commentaires[i];
+                    // $('#userReviews').append('<div class="user-review"><h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3><p>' + comment.commentaire + '</p></div>');
+                    //        }
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
