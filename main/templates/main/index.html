@@ -189,7 +189,54 @@
 
 <section class="container mt-5">
     <div id="userReviews" class="carousel slide" data-ride="carousel">
-        <!-- Vos commentaires existants ici -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="user-review">
+                    <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
+                    <p>Très satisfait de la prestation. Effet Wahou ! Je recommande vivement au vu du rapport
+                        qualité/prix !</p>
+                </div>
+            </div>
+           
+            {% for commentaire in commentaires %}
+                <div class="carousel-item">
+                    <div class="user-review">
+                        <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
+                        <p>{{ commentaire.commentaire }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <br><br>
+            <br><br>
+            <!-- Ajout du formulaire pour permettre aux utilisateurs d'ajouter un commentaire -->
+            <form id="comment-form" class="offset-3" method="post" action="/ajouter_avis/">
+                {% csrf_token %}
+                <label for="comment">Commentaire :</label><br>
+                <textarea name="commentaire" id="comment" rows="4" cols="50" required></textarea><br><br>
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-warning" style="border-radius: 0" type="submit">Ajouter un commentaire</button>
+                    </div>
+                    <div class="col-6">
+                        <a class="btn btn-warning" style="border-radius: 0" href="{% url 'devis' %}">Devis en ligne</a>
+                        <img src="{% static 'asset/img/goute.png'%}" alt="Image" class="img-fluid"
+                        style="width: 50px;height: 50px">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <a class="carousel-control-prev" href="#userReviews" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#userReviews" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suivant</span>
+        </a>
+    </div>
+</section>
+<!--section class="container mt-5">
+    <div id="userReviews" class="carousel slide" data-ride="carousel">
 
         {% for commentaire in commentaires %}
         <div class="carousel-inner">
@@ -202,7 +249,6 @@
         </div>
         {% endfor %}
         <br><br>
-        <!-- Ajout du formulaire pour permettre aux utilisateurs d'ajouter un commentaire -->
         <form id="comment-form" class="offset-3" method="post" action="/ajouter_avis/">
             {% csrf_token %}
             <label for="comment">Commentaire :</label><br>
@@ -210,7 +256,6 @@
             <button class="btn btn-warning" style="border-radius: 0" type="submit">Ajouter un commentaire</button>
         </form>
 
-        <!-- Contrôles du carrousel -->
         <a class="carousel-control-prev" href="#userReviews" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Précédent</span>
@@ -220,10 +265,28 @@
             <span class="sr-only">Suivant</span>
         </a>
     </div>
-</section>
+</section-->
 
 
-<div class="text-center my-4" style="margin-left: -100px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--div class="text-center my-4" style="margin-left: -100px;">
     <div class="container">
         <div class="row">
             <div class="col-lg">
@@ -235,7 +298,7 @@
             </div>
         </div>
     </div>
-</div>
+</div-->
 
 
 
@@ -243,16 +306,23 @@
     <section class="container mt-5">
         {% for video in videos %}
         <div>
+            <iframe width="560" height="315" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
+
+            <!--video width="640" height="360" controls>
+                <source src="{{ video.url }}">
+                Votre navigateur ne prend pas en charge la balise vidéo.
+            </video>
+            
             <iframe width="560" height="315" src="{{ video.url }}" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+                allowfullscreen></iframe-->
         </div>
         {% endfor %}
     </section>
 </center>
 
 
-<section class="container mt-5">
+<!--section class="container mt-5">
     <div id="userReviews" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -262,22 +332,16 @@
                         qualité/prix !</p>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="user-review">
-                    <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
-                    <p>Le meilleur service de nettoyage que j'ai jamais utilisé. Le résultat est incroyable et le
-                        prix est très compétitif.
-                    </p>
+           
+            {% for commentaire in commentaires %}
+                <div class="carousel-item">
+                    <div class="user-review">
+                        <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
+                        <p>{{ commentaire.commentaire }}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="user-review">
-                    <h3 class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</h3>
-                    <p>Excellent service de nettoyage ! Le personnel est professionnel et attentif aux détails. Je
-                        suis très satisfait du
-                        résultat.</p>
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
         <a class="carousel-control-prev" href="#userReviews" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -288,7 +352,7 @@
             <span class="sr-only">Suivant</span>
         </a>
     </div>
-</section>
+</section-->
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
